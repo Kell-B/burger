@@ -6,7 +6,8 @@ var router = express.Router();
 var meal = require("../models/meals.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function (req, res) {
+router.get("*", function (req, res) {
+  // res.redirect('/');
   meal.selectAll(function (data) {
     var hbsObject = {
       meals: data
